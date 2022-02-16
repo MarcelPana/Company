@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+<h2>Update employee</h2>
+<form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+    <! -- Add hidden form field to handle the update -->
+    <input type="hidden" th:field="*(id)">
+
+    <input type="text" th:field="*{firstName}" placeholder="First name" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{lastName}" placeholder="Last name" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{employeeAddress.streetNumber}" placeholder="Street Number" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{employeeAddress.city}" placeholder="City" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{employeeAddress.country}" placeholder="Country" class="form-control mb-4 col-4">
+    <button type="submit" class="btn btn-info col-2"> Save employee</button>
+</form>
+    <a th:href="@{/}">Back to Employee list</a> <! -- creem un link de intoarcere la pag initiala -->
+</div>
+</body>
+</html>
